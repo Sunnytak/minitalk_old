@@ -6,13 +6,12 @@
 #    By: stak <stak@student.hive.fi>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 13:54:51 by stak              #+#    #+#              #
-#    Updated: 2024/05/06 14:56:59 by stak             ###   ########.fr        #
+#    Updated: 2024/05/06 16:59:41 by stak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minitalk
-LIBFT = ./libft
-PRINTF = ./ft_printf
+LIBFT = libft
 
 MY_SOURCE = client.c \
 			server.c
@@ -34,6 +33,7 @@ clean:
 	rm -f $(OBJECTS)
 
 fclean: clean
+	make fclean -C $(LIBFT)
 	rm -f $(NAME)
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:49:15 by stak              #+#    #+#             */
-/*   Updated: 2023/11/21 14:12:05 by stak             ###   ########.fr       */
+/*   Updated: 2024/05/06 16:48:02 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *b, size_t n);
@@ -50,6 +51,15 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
+
+//////////  printf   ///////////////////
+int		ft_printf(const char *str, ...);
+int		ft_printnbr(int n, int *cmp);
+int		ft_printstr(char *s, int *cmp);
+int		ft_printchar(int c, int *cmp);
+int		ft_hexconvert(unsigned long long int n, const char check, int *cmp);
+int		ft_print_unsigned(unsigned int n, int *cmp);
+int		ft_print_ptr(void *s, int *cmp);
 
 typedef struct s_list
 {

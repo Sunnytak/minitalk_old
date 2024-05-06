@@ -6,11 +6,11 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:24:04 by stak              #+#    #+#             */
-/*   Updated: 2023/12/18 14:07:09 by stak             ###   ########.fr       */
+/*   Updated: 2024/05/06 17:00:47 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_hexconvert(unsigned long long int n, const char check, int *cmp)
 {

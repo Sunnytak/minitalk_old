@@ -6,12 +6,11 @@
 #    By: stak <stak@student.hive.fi>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:25:46 by stak              #+#    #+#              #
-#    Updated: 2024/05/06 16:14:53 by stak             ###   ########.fr        #
+#    Updated: 2024/05/06 16:53:44 by stak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-libft = libft.h
 
 MY_SOURCE  = ft_atoi.c \
 			 ft_bzero.c \
@@ -65,21 +64,18 @@ MY_SOURCE  = ft_atoi.c \
 			 ft_lstmap_bonus.c \
 
 OBJECTS = $(MY_SOURCE:.c=.o)
-BONUS_OBJECTS = $(MY_BONUS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) $(libft) 
+$(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
-
-bonus: .bonus
 
 CC: HCC
 
 CFLAGS += -Wall -Wextra -Werror
 
 clean: 
-	rm -f $(OBJECTS) .bonus $(BONUS_OBJECTS)
+	rm -f $(OBJECTS) 
 
 fclean: clean
 	rm -f $(NAME)

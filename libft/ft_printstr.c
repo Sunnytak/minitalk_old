@@ -6,11 +6,11 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 10:52:41 by stak              #+#    #+#             */
-/*   Updated: 2023/12/15 16:14:36 by stak             ###   ########.fr       */
+/*   Updated: 2024/05/06 17:02:20 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_printstr(char *s, int *cmp)
 {
