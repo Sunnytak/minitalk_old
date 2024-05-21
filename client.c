@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:55:27 by stak              #+#    #+#             */
-/*   Updated: 2024/05/21 15:35:28 by stak             ###   ########.fr       */
+/*   Updated: 2024/05/21 17:14:31 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,54 +46,11 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		ft_printf("Error: wrong format.\n");
-		ft_printf("Try: ./client_bonus [PID] [\"MESSAGE\"]\n");
-		return (1);
+		{
+			ft_printf("Error: wrong format.\n");
+			ft_printf("Try: ./client [PID] [\"MESSAGE\"]\n");
+			return (1);
+		}
 	}
 	return (0);
 }
-
-// void	send_bit(int pid, char c)
-// {
-// 	int		i;
-// 	char	temp_char;
-
-// 	i = 8;
-// 	temp_char = c;
-// 	while (i > 0)
-// 	{
-// 		i--;
-// 		temp_char = c >> i;
-// 		if (temp_char & 1)
-// 			kill(pid, SIGUSR1);
-// 		else
-// 			kill(pid, SIGUSR2);
-// 		usleep(50);
-// 	}
-// }
-
-// int	main(int argc, char **argv)
-// {
-// 	int		pid;
-// 	char	*str;
-// 	int		i;
-
-// 	if (argc == 3)
-// 	{
-// 		pid = ft_atoi(argv[1]);
-// 		str = argv[2];
-// 		i = 0;
-// 		while (str[i])
-// 		{
-// 			send_bit(pid, str[i++]);
-// 		}
-// 		send_bit(pid, '\0');
-// 	}
-// 	else
-// 	{
-// 		ft_printf("Error: wrong .\n");
-// 		ft_printf("Try: ./client <pid> <message>");
-// 		return (1);
-// 	}
-// 	return (0);
-// }

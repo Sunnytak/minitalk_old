@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:47:32 by stak              #+#    #+#             */
-/*   Updated: 2024/05/21 15:56:58 by stak             ###   ########.fr       */
+/*   Updated: 2024/05/21 17:36:13 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ void	ft_handler(int signal, siginfo_t *info, void *s)
 	bit++;
 	if (bit == 8)
 	{
-		if (i == '\n')
-			kill(info->si_pid, SIGUSR2);
 		ft_printf("%c", i);
 		bit = 0;
 		i = 0;
+		kill(info->si_pid, SIGUSR2);
 	}
 }
 
@@ -46,7 +45,7 @@ int	main(int argc, char **argv)
 	}
 	pid = getpid();
 	ft_printf("PID [%d]\n", pid);
-	ft_printf("Waiting for a message..\n");
+	ft_printf("Waiting for a message...\n");
 	sig.sa_sigaction = ft_handler;
 	sigemptyset(&sig.sa_mask);
 	sig.sa_flags = 0;

@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:07:01 by stak              #+#    #+#             */
-/*   Updated: 2024/05/21 15:50:48 by stak             ###   ########.fr       */
+/*   Updated: 2024/05/21 17:52:23 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	ft_confirm(int signal)
 {
 	if (signal == SIGUSR1)
-		ft_printf("Message not received\n", 1);
+		ft_printf("Message not received by server\n", 1);
 	if (signal == SIGUSR2)
-		ft_printf("Message recevied\n", 1);
+		ft_printf("Message recevied by server\n");
 }
 
 void	ft_send_bits(int pid, char i)
