@@ -6,54 +6,26 @@
 #    By: stak <stak@student.hive.fi>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 13:54:51 by stak              #+#    #+#              #
-#    Updated: 2024/05/08 14:19:10 by stak             ###   ########.fr        #
+#    Updated: 2024/05/21 15:10:30 by stak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-
-# SOURCES = server.c client.c
-# OBJECTS = $(SOURCES:.c=.o)
-
-# CC = gcc
-# CFLAGS = -Wall -Wextra -Werror
-
-# all: server client
-
-# bonus: server client
-
-# server: server.o libft
-# 	$(CC) -o $@ $< -Llibft -lft
-
-# client: client.o libft
-# 	$(CC) -o $@ $< -Llibft -lft
-
-# %.o: %.c
-# 	$(CC) -c $(CFLAGS) $?
-
-# libft:
-# 	make -C libft
-
-# clean:
-# 	rm -f $(OBJECTS)
-# 	make -C libft clean
-	
-# fclean: clean
-# 	rm -f server client libft/libft.a
-
-# re: fclean all
-
-# .PHONY: all bonus libft clean fclean re
 
 CLIENT = client
 SERVER = server
 LIBFT = libft
+CLIENT_BONUS = client_bonus
+SERVER_BONUS = server_bonus
 
 SOURCE_CLIENT = client.c
+SOURCE_CLIENT_BONUS = client_bonus.c
 				
 SOURCE_SERVER = server.c
+SOURCE_SERVER_BONUS = server_bonus.c
 
 OBJECTS_C = $(SOURCE_CLIENT:.c=.o)
 OBJECTS_S = $(SOURCE_SERVER:.c=.o)
+OBJECTS_C_BONUS = $(SOURCE_CLIENT_BONUS:.c=.o)
+OBJECTS_S_BONUS = $(SOURCE_SERVER_BONUS:.c=.o)
 
 all: $(CLIENT) $(SERVER)
 
@@ -65,18 +37,27 @@ $(SERVER): $(OBJECTS_S) $(LIBFT)
 	make -C $(LIBFT)
 	$(CC) $(CFLAGS) -o $(SERVER) $(OBJECTS_S) -L$(LIBFT) -lft 
 
+bonus: $(CLIENT_BONUS) $(SERVER_BONUS)
+
+$(CLIENT_BONUS): $(OBJECTS_C_BONUS) $(LIBFT)
+	make -C $(LIBFT)
+	$(CC) $(CFLAGS) -o $(CLIENT_BONUS) $(OBJECTS_C_BONUS) -L$(LIBFT) -lft
+
+$(SERVER_BONUS): $(OBJECTS_S_BONUS) $(LIBFT)
+	make -C $(LIBFT)
+	$(CC) $(CFLAGS) -o $(SERVER_BONUS) $(OBJECTS_S_BONUS) -L$(LIBFT) -lft 
+
 CC: HCC
 
 CFLAGS += -Wall -Wextra -Werror
-
 	
 clean: 
 	make clean -C $(LIBFT)
-	rm -f $(OBJECTS_C) $(OBJECTS_S)
+	rm -f $(OBJECTS_C) $(OBJECTS_S) $(OBJECTS_C_BONUS) $(OBJECTS_S_BONUS)
 
 fclean: clean
 	make fclean -C $(LIBFT)
-	rm -f $(CLIENT) $(SERVER)
+	rm -f $(CLIENT) $(SERVER) $(CLIENT_BONUS) $(SERVER_BONUS)
 
 re: fclean all
 

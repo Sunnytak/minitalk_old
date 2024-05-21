@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:55:27 by stak              #+#    #+#             */
-/*   Updated: 2024/05/08 16:36:19 by stak             ###   ########.fr       */
+/*   Updated: 2024/05/21 15:35:28 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_printf("Error: wrong format.\n");
-		ft_printf("Try: ./client <PID> <MESSAGE>\n");
+		ft_printf("Try: ./client_bonus [PID] [\"MESSAGE\"]\n");
 		return (1);
 	}
 	return (0);
